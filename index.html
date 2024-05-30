@@ -23,20 +23,20 @@
         h2 {
             color: #333;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
+        .download-links {
+            list-style-type: none;
+            padding: 0;
         }
-        table, th, td {
-            border: 1px solid #ddd;
+        .download-links li {
+            margin: 10px 0;
         }
-        th, td {
-            padding: 8px;
-            text-align: left;
+        .download-links a {
+            text-decoration: none;
+            color: #0066cc;
+            font-weight: bold;
         }
-        th {
-            background-color: #f2f2f2;
+        .download-links a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -45,42 +45,12 @@
         <h1>ARCHIVED MESSAGES</h1>
     </header>
     <main>
-        <h2>FAQ</h2>
-        <div id="faq-table"></div>
-
-        <h2>GENERAL</h2>
-        <div id="general-table"></div>
-
-        <h2>SUGGESTIONS</h2>
-        <div id="suggestions-table"></div>
+        <h2>Download Links</h2>
+        <ul class="download-links">
+            <li><a href="FAQ.csv" download>Download FAQ.csv</a></li>
+            <li><a href="GENERAL.csv" download>Download GENERAL.csv</a></li>
+            <li><a href="SUGGESTIONS.csv" download>Download SUGGESTIONS.csv</a></li>
+        </ul>
     </main>
-
-    <script>
-        function loadCSV(file, elementId) {
-            fetch(file)
-                .then(response => response.text())
-                .then(text => {
-                    const rows = text.split('\n');
-                    let table = '<table>';
-                    rows.forEach(row => {
-                        const cols = row.split(',');
-                        table += '<tr>';
-                        cols.forEach(col => {
-                            table += '<td>' + col.trim() + '</td>';
-                        });
-                        table += '</tr>';
-                    });
-                    table += '</table>';
-                    document.getElementById(elementId).innerHTML = table;
-                })
-                .catch(error => console.error('Error loading CSV file:', error));
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            loadCSV('FAQ.csv', 'faq-table');
-            loadCSV('GENERAL.csv', 'general-table');
-            loadCSV('SUGGESTIONS.csv', 'suggestions-table');
-        });
-    </script>
 </body>
 </html>
