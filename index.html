@@ -3,25 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARCHIVED MESSAGES</title>
+    <title>Solder Reflow Plates Archive</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #121212;
+            color: #e0e0e0;
         }
         header {
-            background-color: #333;
+            background-color: #1e88e5;
             color: #fff;
-            padding: 10px 0;
+            padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
         }
         main {
             padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            margin: 0 0 20px;
         }
         h2 {
+            color: #1e88e5;
+            border-bottom: 2px solid #1e88e5;
+            padding-bottom: 5px;
+        }
+        .info-message {
+            background-color: #ffcc00;
             color: #333;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-left: 6px solid #ff6f00;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            border-radius: 4px;
         }
         .download-links {
             list-style-type: none;
@@ -32,11 +52,20 @@
         }
         .download-links a {
             text-decoration: none;
-            color: #0066cc;
+            color: #1e88e5;
             font-weight: bold;
+            transition: color 0.3s;
         }
         .download-links a:hover {
-            text-decoration: underline;
+            color: #1565c0;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+            background-color: #1e1e1e;
+            color: #b0bec5;
+            border-top: 1px solid #333;
         }
     </style>
 </head>
@@ -45,6 +74,9 @@
         <h1>ARCHIVED MESSAGES</h1>
     </header>
     <main>
+        <div class="info-message">
+            Since the Solder Reflow Plates server got griefed by @protoncat_rv on 30.05.2024, this archive was created to save most of the undeleted messages.
+        </div>
         <h2>Download Links</h2>
         <ul class="download-links">
             <li><a href="FAQ.csv" download>Download FAQ.csv</a></li>
@@ -52,5 +84,8 @@
             <li><a href="SUGGESTIONS.csv" download>Download SUGGESTIONS.csv</a></li>
         </ul>
     </main>
+    <footer>
+        Courtesy of @mikoinspace
+    </footer>
 </body>
 </html>
